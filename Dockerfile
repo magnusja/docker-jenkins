@@ -2,7 +2,7 @@ FROM jenkins:latest
 
 USER root
 RUN apt-get update && \
-apt-get --no-install-recommends -y install sudo lxc && \
+apt-get --no-install-recommends -y install sudo libapparmor1 libsystemd-journal0 && \
 echo "jenkins ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
 rm -rf /var/lib/apt/lists/*
 
