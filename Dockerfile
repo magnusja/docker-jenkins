@@ -2,7 +2,7 @@ FROM jenkins:latest
 
 USER root
 RUN apt-get update && \
-apt-get --no-install-recommends -y install sudo && \
+apt-get --no-install-recommends -y install sudo lxc && \
 echo "jenkins ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
 rm -rf /var/lib/apt/lists/*
 
